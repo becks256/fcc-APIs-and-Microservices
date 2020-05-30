@@ -20,6 +20,9 @@ app.use(express.json());
 app.use(express.urlencoded({extended : true}));
 app.use(express.static('public'))
 
+app.get('/', (req, res) => {
+    return res.json({msg: 'Hello World!'})
+})
 app.get('/api/timestamp/', (req, res) => {
     let date = new Date();
     return res.json({
